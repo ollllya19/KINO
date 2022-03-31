@@ -1,0 +1,45 @@
+{% extends "main_app/layout.html" %}
+{% load static %}
+
+{% block body %}
+    <h1>Фильмы</h1>
+    <form method="post">
+        {% csrf_token %}
+        
+        <div>
+            <span>Жанр</span>
+            <select name="genre">
+                <option>-----</option>
+                    {% for genre in genres %}
+                        <option value="{{ genre }}">{{ genre }}</option>
+                    {% endfor %}
+            </select>
+        </div>
+
+        <div>
+            <span>Год выпуска</span>
+            <select name="year_value">
+                <option>-----</option>
+                    {% for year in years %}
+                        <option value="{{ year }}">{{ year }}</option>
+                    {% endfor %}
+            </select>
+        </div>
+        
+        <p><button type="submit">Найти</button></p>
+    </form>
+
+    <ul>
+        {% if films %}
+        {% for film in films %}
+            <li><p><div><img src="{{ film.photo }}"></div>
+                <div>
+                <p>Название: {{ film.title }}</p>
+                <p>Жанр: {{ film.genre }}</p>
+                <p>Год выпуска: {{ film.year }}</p>
+                </div></p>
+            </li>
+        {% endfor %}
+        {% endif %}
+    </ul>
+{% endblock %}
