@@ -7,9 +7,14 @@
         {% csrf_token %}
         
         <div>
+            <span>Название</span>
+            <input type="text", name="title">
+        </div>
+
+        <div>
             <span>Жанр</span>
             <select name="genre">
-                <option>-----</option>
+                <option value=''>-----</option>
                     {% for genre in genres %}
                         <option value="{{ genre }}">{{ genre }}</option>
                     {% endfor %}
@@ -19,7 +24,7 @@
         <div>
             <span>Год выпуска</span>
             <select name="year_value">
-                <option>-----</option>
+                <option value=''>-----</option>
                     {% for year in years %}
                         <option value="{{ year }}">{{ year }}</option>
                     {% endfor %}
@@ -29,6 +34,8 @@
         <p><button type="submit">Найти</button></p>
     </form>
 
+    <p><button type="submit"><a href="/main_app/user/{{ user_id }}">Личаня бибилиотека</a></button></p>
+   
     <ul>
         {% if films %}
         {% for film in films %}
@@ -37,6 +44,7 @@
                 <p>Название: {{ film.title }}</p>
                 <p>Жанр: {{ film.genre }}</p>
                 <p>Год выпуска: {{ film.year }}</p>
+                <p><button type="submit">Купить</button></p>
                 </div></p>
             </li>
         {% endfor %}

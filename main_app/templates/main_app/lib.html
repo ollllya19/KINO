@@ -1,0 +1,37 @@
+{% extends "main_app/mainlayout.html" %}
+
+{% block body %}
+{% if films %}
+      {% for film in films %}
+      <div class="film-buyed">
+        <div class="film-cover">
+          <img src="/static/main_app/resources/uncharted.png">
+        </div>
+        <div class="full-film-container">
+          <div class="film-container">
+            <div class="film-container-txt">
+              <div class="film-txt">{{ film.title }}</div>
+              <div class="film-genre">{{film.year}},  {{film.genre}}</div>
+              <div class="film-producer">Режиссер: {{ film.director}}</div>
+              <div class="film-description">
+                <div class="film-description-txt">{{ film.overview }}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="film-buyed-container">
+            <div class="film-buyed-txt">Начать просмотр:</div>
+            <div class="film-buyed-services">
+              <img src="/static/main_app/resources/okko.svg">
+              <img src="/static/main_app/resources/netflix.svg">
+              <img src="/static/main_app/resources/more_tv.svg">
+              <img src="/static/main_app/resources/kinopoisk.svg">
+              <img src="/static/main_app/resources/ivi.svg">
+            </div>
+          </div>
+        </div>
+      </div>
+{% endfor %}
+{% endif %}
+
+{% endblock %}

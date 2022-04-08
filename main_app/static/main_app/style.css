@@ -1,0 +1,1107 @@
+.header {
+    position: absolute;
+    width: 100%;
+    height: 72px;
+    
+    background: #1F1F1F;
+}
+
+.logotype {
+
+    position: absolute;
+width: 161px;
+height: 42px;
+left: calc(50% - 161px/2 - 519.5px);
+top: calc(50% - 42px/2);
+
+}
+
+.search {
+    position: absolute;
+width: 392px;
+height: 34px;
+left: calc(50% - 392px/2 - 154px);
+top: calc(50% - 34px/2);
+
+
+}
+
+.search-input {
+    width: 392px;
+height: 34px;
+border: none;
+    background: #3E3E3E;
+box-sizing: border-box;
+border-radius: 4px;
+padding: 12px 16px;
+}
+
+.icon-filter {
+    position: absolute;
+    left: 332px;
+    right: 42px;
+    top: 8px;
+}
+
+.icon-search {
+    position: absolute;
+    left: 358px;
+    right: 16px;
+    top: 8px;
+
+    transform: rotate(90deg);
+}
+
+.account {
+    position: absolute;
+width: 223px;
+height: 40px;
+left: calc(50% - 223px/2 + 480.5px);
+top: calc(50% - 40px/2);
+
+}
+
+.library {
+    position: absolute;
+    width: 163px;
+    height: 24px;
+    left: 4px;
+    top: 8px;
+}
+
+.library-txt {
+    position: absolute;
+    width: 131px;
+    height: 18px;
+    left: 0px;
+    top: 3px;
+
+    font-family: 'SF-Pro-Text-Medium';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    /* identical to box height, or 129% */
+
+    text-align: right;
+    letter-spacing: -0.408px;
+
+    color: #FFFFFF;
+
+}
+
+.icon-library {
+    position: absolute;
+    left: 139px;
+}
+
+.account-photo {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: 183px;
+    top: 0px;
+
+    background: white;
+    border-radius: 90px;
+}
+
+.main {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 72px;
+
+    background: #F4F4F4;
+}
+
+.film {
+/* Auto layout */
+
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 24px;
+
+position: relative;
+width: 896px;
+height: 258px;
+margin-left: 50px;
+margin-right: 50px;
+background: #1F1F1F;
+border-radius: 4px;
+
+
+
+}
+
+.film-cover {
+    position: static;
+width: 140px;
+height: 210px;
+left: 24px;
+top: 24px;
+
+background: url(image.png), #C4C4C4;
+border-radius: 4px;
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+margin-right: 16px;
+}
+
+.full-film-container {
+/* Auto layout */
+
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+
+position: static;
+width: 442px;
+min-height: 206px;
+left: 180px;
+top: 24px;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 1;
+flex-grow: 0;
+}
+.film-container {
+    /* Auto layout */
+
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+
+position: static;
+width: 442px;
+min-height: 158px;
+left: 0px;
+top: 0px;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+}
+
+.film-container-txt {
+/* Auto layout */
+
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+
+position: static;
+width: 442px;
+height: 70px;
+left: 0px;
+top: 0px;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+}
+.film-txt {
+    position: static;
+    width: 442px;
+    height: 30px;
+    left: 0px;
+    top: 0px;
+    
+    font-family: 'SF-Pro-Text-Bold';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    /* identical to box height, or 125% */
+    
+    letter-spacing: -0.408px;
+    
+    color: #FFFFFF;
+    
+    
+    /* Inside auto layout */
+    
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 0px;
+
+}
+
+.film-genre {
+    position: static;
+width: 442px;
+height: 20px;
+left: 0px;
+top: 30px;
+
+font-family: 'SF-Pro-Text-Semibold';
+font-style: normal;
+font-weight: 600;
+font-size: 13px;
+line-height: 20px;
+/* identical to box height, or 154% */
+
+letter-spacing: -0.408px;
+
+color: rgba(255, 255, 255, 0.6);
+
+/* Inside auto layout */
+
+flex: none;
+order: 1;
+flex-grow: 0;
+margin: 0px 0px;
+}
+
+.film-producer {
+    position: static;
+width: 442px;
+height: 20px;
+left: 0px;
+top: 50px;
+
+font-family: 'SF-Pro-Text-Semibold';
+font-style: normal;
+font-weight: 600;
+font-size: 13px;
+line-height: 20px;
+/* identical to box height, or 154% */
+
+letter-spacing: -0.408px;
+
+color: rgba(255, 255, 255, 0.6);
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 1;
+flex-grow: 0;
+margin: 0px 0px;
+}
+.film-description {
+    display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 0px;
+
+position: static;
+width: 442px;
+height: 80px;
+left: 0px;
+top: 78px;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 1;
+flex-grow: 0;
+margin: 8px 0px;
+
+}
+
+.film-description-txt {
+    position: static;
+width: 442px;
+min-height: 80px;
+left: 0px;
+top: 0px;
+
+font-family: 'SF-Pro-Text-Medium';
+font-style: normal;
+font-weight: 500;
+font-size: 13px;
+line-height: 20px;
+/* or 154% */
+
+letter-spacing: -0.408px;
+
+color: #FFFFFF;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 1;
+flex-grow: 0;
+}
+
+.film-buy-ticket {
+/* Auto layout */
+
+position: static;
+left: 0px;
+top: 166px;
+}
+
+.buy-button {
+
+align-items: flex-start;
+padding: 10px;
+
+position: static;
+width: 151px;
+left: 0px;
+top: 166px;
+
+
+/* Оранжевый цвет */
+
+border: none;
+background: #FF6600;
+border-radius: 4px;
+
+/* Inside auto layout */
+
+flex: none;
+order: 2;
+flex-grow: 0;
+margin-top: 8px;
+
+font-family: 'SF-Pro-Text-Medium';
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 20px;
+text-align: right;
+/* identical to box height, or 167% */
+
+letter-spacing: -0.408px;
+
+color: #FFFFFF;
+}
+
+.buy {
+    /* Auto layout */
+
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px;
+
+position: relative;
+height: 20px;
+left: 5px;
+top: -30px;
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+margin: 0px 0px;
+}
+
+.film-icon-buy-ticket {
+    position: static;
+width: 20px;
+height: 20px;
+left: 0px;
+top: 0px;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+}
+
+.film-buy-ticket-txt {
+    position: static;
+left: 30px;
+top: 0px;
+
+font-family: 'SF-Pro-Text-Medium';
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 20px;
+/* identical to box height, or 167% */
+
+letter-spacing: -0.408px;
+
+color: #FFFFFF;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 1;
+flex-grow: 0;
+margin: 0px 10px;
+}
+
+.film-buyed {
+    /* Auto layout */
+    
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 24px;
+    
+    position: relative;
+    width: 896px;
+    height: 258px;
+    margin-left: 50px;
+    margin-right: 50px;
+
+    background: #1F1F1F;
+    border-radius: 4px;
+    
+}
+
+.film-buyed-container {
+    /* Auto layout */
+
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+
+position: static;
+width: 511px;
+height: 24px;
+left: 0px;
+top: 186px;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 1;
+flex-grow: 0;
+margin: 28px 0px;
+}
+
+.film-buyed-txt {
+    position: static;
+    width: 103px;
+    height: 20px;
+    left: 0px;
+    top: 0px;
+    
+    font-family: 'SF-Pro-Text-Medium';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 20px;
+    /* identical to box height, or 167% */
+    
+    letter-spacing: -0.408px;
+    
+    color: rgba(255, 255, 255, 0.6);
+    
+    
+    /* Inside auto layout */
+    
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.film-buyed-services {
+/* Frame 18 */
+
+
+/* Auto layout */
+
+display: block;
+flex-direction: block;
+justify-content: left;
+align-items: flex-end;
+padding: 0px;
+
+position: static;
+width: 400px;
+height: 24px;
+left: 111px;
+top: 0px;
+
+
+/* Inside auto layout */
+
+flex: auto;
+order: 1;
+flex-grow: 0;
+margin: 0px 8px;
+}
+
+.film-buyed-first-process {
+    
+/* Auto layout */
+
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 24px;
+
+position: static;
+width: 896px;
+height: 374px;
+margin-left: 50px;
+margin-right: 50px;
+
+background: #1F1F1F;
+border-radius: 4px;
+
+/* Inside auto layout */
+
+flex: none;
+order: 2;
+flex-grow: 0;
+}
+
+.film-buyed-first-process-container {
+ /* Auto layout */
+
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+
+position: static;
+width: 600px;
+height: 168px;
+left: 24px;
+top: 250px;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 1;
+flex-grow: 0;
+margin: 16px 0px;
+}
+
+.film-buyed-first-process-container-inputs {
+    /* Auto layout */
+
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 0px;
+
+position: static;
+width: 600px;
+height: 44px;
+left: 0px;
+top: 0px;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+margin: 16px 0px;
+}
+
+.input-form {
+    /* Поле ввода / Электронная почта */
+position: static;
+width: 296px;
+height: 44px;
+left: 0px;
+top: 0px;
+
+border: 1px solid rgba(255, 255, 255, 0.4);
+box-sizing: border-box;
+border-radius: 4px;
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+
+background: #1F1F1F;
+padding: 12px 16px;
+}
+
+.input-form-next {
+    /* Поле ввода / Электронная почта */
+position: relative;
+width: 296px;
+height: 44px;
+left: -224px;
+top: 0px;
+
+border: 1px solid rgba(255, 255, 255, 0.4);
+box-sizing: border-box;
+border-radius: 4px;
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+
+background: #1F1F1F;
+padding: 12px 16px;
+}
+
+.input-form-2 {
+/* Auto layout */
+position: relative;
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 4px;
+
+width: 232px;
+height: 16px;
+left: -296px;
+top: -12px;
+
+background: #1F1F1F;
+
+}
+
+.input-form-2-next {
+    /* Auto layout */
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 4px;
+    
+    width: 232px;
+    height: 16px;
+    left: -520px;
+    top: -12px;
+    
+    background: #1F1F1F;
+    
+    }
+
+.input-txt {
+    position: static;
+    width: 224px;
+    height: 16px;
+
+    
+    font-family: 'SF-Pro-Text-Regular';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    /* identical to box height, or 114% */
+    
+    letter-spacing: -0.36px;
+    
+    color: rgba(255, 255, 255, 0.4);
+    
+    
+    /* Inside auto layout */
+    
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.procedure-paying {
+/* Процедура оплаты */
+
+
+/* Auto layout */
+
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+
+position: static;
+width: 600px;
+min-height: 108px;
+left: 0px;
+top: 60px;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 1;
+flex-grow: 0;
+}
+
+.procedure-paying-checkbox {
+    position: static;
+width: 542px;
+height: 16px;
+left: 0px;
+top: 0px;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+margin: 8px 0px;
+}
+
+.procedure-paying-checkbox-status {
+    position: inherit;
+width: 16px;
+height: 16px;
+left: 0px;
+top: 0px;
+
+border: 1px solid #FFFFFF;
+box-sizing: border-box;
+border-radius: 2px;
+}
+
+.procedure-paying-txt {
+    position:relative;
+width: 429px;
+height: 16px;
+left: 24px;
+top: 0px;
+
+font-family: 'SF-Pro-Text-Medium';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 16px;
+/* identical to box height, or 114% */
+
+letter-spacing: -0.36px;
+
+color: #FFFFFF;
+}
+
+.cta-buttons-container {
+/* Auto layout */
+
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+
+position: static;
+width: 600px;
+height: 44px;
+left: 0px;
+top: 64px;
+margin: 16px 0px;
+
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 1;
+flex-grow: 0;
+
+}
+
+.cta-buttons-buy {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+    position: static;
+    width: 296px;
+    height: 44px;
+    right: 303px;
+    bottom: 0px;
+    
+    background: #FF6600;
+    border: none;
+    border-radius: 4px;
+    
+    /* Inside auto layout */
+    
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+
+    font-family: 'SF-Pro-Text-Medium';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    /* identical to box height, or 114% */
+    
+    text-align: center;
+    letter-spacing: -0.36px;
+    
+    color: #FFFFFF;
+}
+
+.cta-buttons-buy2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+padding: 14px 121px;
+
+position: static;
+width: 295px;
+height: 44px;
+right: 0px;
+bottom: 0px;
+
+background: #1F1F1F;
+border: 1px solid #FF6600;
+box-sizing: border-box;
+border-radius: 4px;
+
+/* Inside auto layout */
+
+flex: none;
+order: 1;
+flex-grow: 0;
+margin: 0px 8px;
+
+font-family: 'SF-Pro-Text-Medium';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 16px;
+/* identical to box height, or 114% */
+
+text-align: center;
+letter-spacing: -0.36px;
+
+color: #FF6600;
+}
+
+.cta-buttons-buy-txt {
+    position: static;
+width: auto;
+height: 16px;
+left: 92px;
+top: 14px;
+
+font-family: 'SF-Pro-Text-Medium';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 16px;
+/* identical to box height, or 114% */
+
+text-align: center;
+letter-spacing: -0.36px;
+
+color: #FFFFFF;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+}
+
+
+.grid-2 {
+    position: absolute;
+    width: 1040px;
+    height: 1848px;
+    left: calc(50% - 1040px/2 + 120px);
+    top: 80px;
+
+    background: #FFFFFF;
+}
+
+.container-headline {
+    position: absolute;
+width: 336px;
+height: 30px;
+left: 50px;
+margin-top: 24px;
+margin-bottom: 16px;
+}
+
+.txt-headline {
+    position: absolute;
+width: 336px;
+height: 30px;
+
+font-family: 'SF-Pro-Text-Bold';
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 30px;
+/* identical to box height, or 125% */
+
+letter-spacing: -0.408px;
+
+color: #000000;
+}
+
+
+.grid-for-films {
+    top: 100px;
+    display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+margin: 70px 0px;
+}
+
+.ilya {
+    position: absolute;
+width: 240px;
+height: 1848px;
+left: calc(50% - 240px/2 - 521px);
+top: 80px;
+
+background: white;
+box-shadow: 1px 0px 0px rgba(0, 0, 0, 0.1);
+}
+
+.ilya-container {
+    /* Auto layout */
+
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+
+position: absolute;
+width: 111px;
+height: 551px;
+left: 24px;
+top: 24px;
+
+}
+
+.ilya-icon {
+    /* Auto layout */
+
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px 7px 0px 0px;
+
+position: static;
+width: 100px;
+height: 24px;
+left: 0px;
+top: 0px;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+margin-bottom: 16px;
+}
+
+.ilya-icon-txt {
+    
+position: static;
+width: 61px;
+height: 21px;
+left: 32px;
+top: 1.5px;
+
+font-family: 'SF-Pro-Text-Medium';
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 21px;
+letter-spacing: 0.02em;
+
+color: #000000;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 1;
+flex-grow: 0;
+margin: 0px 8px;
+}
+
+.ilya-genres {
+    /* Auto layout */
+
+flex-direction: column;
+align-items: flex-start;
+
+position: static;
+width: 111px;
+height: 479px;
+
+
+/* Inside auto layout */
+
+flex: none;
+flex-grow: 0;
+
+font-family: 'SF Pro Display';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 17px;
+/* identical to box height */
+
+
+color: #000000;
+
+opacity: 0.6;
+}
+
+@font-face {
+	font-family: "SF-Pro-Text-Regular";
+    src: url("Fonts/SF-Pro-Text-Regular.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+	font-family: "SF-Pro-Text-Semibold";
+    src: url("Fonts/SF-Pro-Text-Semibold.otf") format("opentype");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+	font-family: "SF-Pro-Text-Medium";
+    src: url("Fonts/SF-Pro-Text-Medium.otf") format("opentype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+	font-family: "SF-Pro-Text-Bold";
+    src: url("Fonts/SF-Pro-Text-Bold.otf") format("opentype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}

@@ -1,9 +1,0 @@
-{% extends "main_app/layout.html" %}
-
-{% block body %}
-    <h1>КИНО</h1>
-    <form>
-        {% csrf_token %}
-        <a href={% url 'signup' %}>Зарегистрироваться</a>  |  <a href={% url 'signin' %}>Войти</a>
-    </form>
-{% endblock %}
