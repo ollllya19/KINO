@@ -1,0 +1,36 @@
+{% extends "main_app/layout.html" %}
+
+{% block body %}
+<div class="grid-2">
+  <div class="container-headline">
+    <div class="txt-headline">Покупка фильма</div>
+  </div>
+
+<div class="grid-for-films">
+<div class="film-buyed-first-process">
+    <div class="film-cover">
+      <img src={{film.photo}} class="poster">
+    </div>
+    <div class="full-film-container">
+      <div class="film-container">
+        <div class="film-container-txt">
+          <div class="film-txt">{{film.title}}</div>
+          <div class="film-genre">{{film.year}},  {{film.genre}}</div>
+          <div class="film-producer">Режиссер: {{film.director}}</div>
+          <div class="film-description">
+            <div class="film-description-txt">{{film.overview}}
+            </div>
+          </div>
+        </div>
+      </div>
+      <form class="cta-buttons-container">
+        {% csrf_token %}
+        <input type="submit" class="cta-buttons-buy" value="Фильм приобретен">
+        <button class="cta-buttons-buy2" type="submit"><a class="name_link" href="/IKINO/films/library/{{user_id}}">Перейти в бибилиотеку</a></button>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+
+{% endblock %}

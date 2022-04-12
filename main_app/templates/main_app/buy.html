@@ -1,88 +1,62 @@
-<html lang="en">
+{% extends "main_app/layout.html" %}
 
-<head>
-  <meta charset="utf-8">
-  <title>И КИНО</title>
-  <link rel="stylesheet" href="/static/main_app/style.css">
-</head>
+{% block body %}
+<div class="grid-2">
+  <div class="container-headline">
+    <div class="txt-headline">Покупка фильма</div>
+  </div>
 
-<body style="background: #F4F4F4">
-  <div class=header>
-    <div class="logotype">
-      <img src="/static/main_app/resources/logotype.svg">
-    </div>
-
-    <form  class="search">
-      <input class="search-input">
-      <div class="icon-filter">
-        <img src="/static/main_app/resources/filter-16x16.svg">
-      </div>
-      <div class="icon-search">
-        <img src="/static/main_app/resources/search-18x18.svg">
-      </div>
-    </form>
-
-    <div class="account">
-      <div class="library">
-        <div class="library-txt"><a href="{% url 'pers_library' 28 %}">Личная бибилиотека</a></div>
-        <div class="icon-library">
-          <img src="/static/main_app/resources/library-24x24.svg">
+  <div class="grid-for-films">
+<div class="film-buyed-first-process">
+  <div class="film-cover">
+    <img src={{film.photo}} class="poster">
+  </div>
+  <div class="full-film-container">
+    <div class="film-container">
+      <div class="film-container-txt">
+        <div class="film-txt">{{ film.title }}</div>
+        <div class="film-genre">{{film.year}}, {{film.genre}}</div>
+        <div class="film-producer">Режиссер: {{film.director}}</div>
+        <div class="film-description">
+          <div class="film-description-txt">{{film.overview}}</div>
         </div>
       </div>
-      <div class="account-photo"></div>
     </div>
-
-  </div>
-  <div class="ilya">
-    <div class="ilya-container">
-      <div class="ilya-icon">
-        <img src="/static/main_app/resources/genres-24x24.svg">
-        <div class="ilya-icon-txt">Жанры</div>
-      </div>
-      <div class="ilya-genres">
-        {% for genre in genres %}
-          <p><a href="/main_app/films/{{ genre}}">{{ genre }}</a></p>
-        {% endfor %}
-      </div>
-    </div>
-  </div>
-  <div class="grid-2">
-    <div class="container-headline">
-      <div class="txt-headline">Оплаченные фильмы</div>
-    </div>
-    <div class="grid-for-films">
-      {% if films %}
-        {% for film in films %}
-        <div class="film">
-          <div class="film-cover">
-            <img src="{{ film.photo }}">
+    <div class="film-buyed-first-process-container" method="POST">
+      {% csrf_token %}
+      <div class="film-buyed-first-process-container-inputs">
+        <input class="input-form" name="mail">
+          <div class="input-form-2">
+            <div class="input-txt">Введите электронную почту</div>
           </div>
-          <div class="full-film-container">
-            <div class="film-container">
-              <div class="film-container-txt">
-                <div class="film-txt">{{ film.title }}</div>
-                <div class="film-genre">{{ film.year }}, {{ film.genre }}</div>
-                <div class="film-producer">Режиссер: {{ film.director }}</div>
-                <div class="film-description">
-                  <div class="film-description-txt">{{ film.overview }}
-                    <form class="film-buy-ticket">
-                      <input type="submit" class="buy-button" value="Приобрести фильм" <a href="{% url 'pers_library' 28 %}"></a>>
-                      <div class="buy">
-                        <div class="film-icon-buy-ticket">
-                          <img src="/static/main_app/resources/ticket-20x20.svg">
-                        </div>
-                      </div>
-                    </form>
-                  </div>
-                </div>
-              </div>
-            </div>
+
+        <input class="input-form-next" name="card">
+          <div class="input-form-2-next">
+            <div class="input-txt">Введите номер банковской карты</div>
+          </div>
+
+      </div>
+      <div class="procedure-paying">
+        <div class="procedure-paying-checkbox">
+          <div class="procedure-paying-checkbox-status">
+            <div class="procedure-paying-txt">Выслать ли вам чек об покупке фильма на электронную почту?</div>
           </div>
         </div>
-        {% endfor %}
-        {% endif %}
-
+        <div class="procedure-paying-checkbox">
+          <div class="procedure-paying-checkbox-status">
+            <div class="procedure-paying-txt">Я согласен с вашими Условиями и Положениями сервиса</div>
+          </div>
+        </div>
+        <div class="cta-buttons-container">
+          <div class="cta-buttons-buy"><a class="name_link" href="{% url 'pay' user_id film.id %}">Оплатить фильм</a></div>
+          <div class="cta-buttons-buy2"><a class="name_link" href="/IKINO/films/library/{{user_id}}">Отмена</a></div>
+        </div>
+      </div>
     </div>
+
   </div>
-</body>
-</html>
+</div>
+</div>
+</div>
+
+{% endblock %}

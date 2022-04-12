@@ -165,28 +165,44 @@ letter-spacing: -0.36px;
 color: #FFFFFF;
 }
 
+a{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+.name_link {
+    color: #FFFFFF;
+}
+
+.name_link2 {
+    color: #000000;
+}
+
 .registration {
     position: absolute;
-width: 296px;
-height: 44px;
-right: 32px;
-bottom: 32px;
+    width: 296px;
+    height: 44px;
+    right: 32px;
+    bottom: 32px;
 
-background: #FFFFFF;
-border: 1px solid rgba(31, 31, 31, 0.4);
-box-sizing: border-box;
-border-radius: 4px;
+    background: #FFFFFF;
+    border: 1px solid rgba(31, 31, 31, 0.4);
+    box-sizing: border-box;
+    border-radius: 4px;
 
-font-family: 'SF-Pro-Text-Medium';
-font-style: normal;
-font-weight: 500;
-font-size: 14px;
-line-height: 16px;
+    font-family: 'SF-Pro-Text-Medium';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
 
-text-align: center;
-letter-spacing: -0.36px;
+    text-align: center;
+    letter-spacing: -0.36px;
 
-color: #000000;
+    color: #000000;
 }
 
 @font-face {

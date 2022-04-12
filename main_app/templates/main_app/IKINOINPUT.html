@@ -3,6 +3,11 @@
 <head>
   <meta charset="utf-8">
   <title>IKINOINPUT</title>
+  <style>
+   a {
+   text-decoration: none;
+   }
+  </style>
   <link rel="stylesheet" href="/static/main_app/IKINOStyle.css">
 </head>
 
@@ -12,7 +17,7 @@
   <main>
     <form class="input-window" method="POST">
       {% csrf_token %}
-      <div class = "logo"><img src="/static/main_app/resources/logotype.svg"></div>
+      <div class = "logo"><img src="/static/main_app/resources/logotype-black.svg"></div>
       <div class = "input-txt">Войдите или зарегистрируйтесь</div>
       <div class = "input-form">
         <input class = "input-number" type="text", name="login">
@@ -25,7 +30,7 @@
           </div>
       </div>
       <button class = "authorization" type="submit" value="Войти в аккаунт">Войти в аккаунт</button>
-      <button class = "registration" type="submit" value="Создать аккаунт">Создать аккаунт</button>
+      <button class = "registration" type="submit" value="Создать аккаунт"><a class = "name_link2" href="{% url 'signup' %}">Создать аккаунт</a></button>
     </form>
   </main>
   <footer>

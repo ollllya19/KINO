@@ -1,37 +1,99 @@
-{% extends "main_app/mainlayout.html" %}
+{% extends "main_app/layout.html" %}
 
 {% block body %}
-{% if films %}
-      {% for film in films %}
-      <div class="film-buyed">
+<div class="grid-2">
+    {% if looked_films %}
+      <div class="container-headline">
+        <div class="txt-headline">Недавно просмотренные:</div>
+      </div>
+      <div class="grid-for-films">
+      
+        {% for film in looked_films %}
+        <div class="film">
+    
         <div class="film-cover">
-          <img src="/static/main_app/resources/uncharted.png">
+            <img src={{film.photo}} class="poster">
         </div>
+        
         <div class="full-film-container">
-          <div class="film-container">
+            <div class="film-container">
             <div class="film-container-txt">
-              <div class="film-txt">{{ film.title }}</div>
-              <div class="film-genre">{{film.year}},  {{film.genre}}</div>
-              <div class="film-producer">Режиссер: {{ film.director}}</div>
-              <div class="film-description">
+                <div class="film-txt">{{ film.title }}</div>
+                <div class="film-genre">{{ film.year }}, {{ film.genre }}</div>
+                <div class="film-producer">Режиссер: {{ film.director }}</div>
+                <div class="film-description">
                 <div class="film-description-txt">{{ film.overview }}
+                    <div class="film-buy-ticket">
+                    <div class="buy-button"><a class = "name_link" href="{% url 'buy' genre user_id film.id %}">Приобрести фильм</a>
+                    <div class="buy">
+                        <div class="film-icon-buy-ticket">
+                        <img src="/static/main_app/resources/ticket-20x20.svg">
+                        </div>
+                    </div>
                 </div>
+                </div>
+    
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    
+        </div>
+        {% endfor %}
+</div>
+{% else %}
+<div class="grid-2">
+  <div class="container-headline">
+    <div class="txt-headline">В Вашей библиотеке пока нет фильмов</div>
+  </div>
+</div>
+{% endif %}
+
+{% if paid_films %}
+      <div class="container-headline">
+        <div class="txt-headline">Библиотека</div>
+      </div>
+      <div class="grid-for-films">
+        
+    {% for film in paid_films %}
+    <div class="film-buyed">
+      <div class="film-cover">
+        <img src="{{film.photo}}" class="poster">
+      </div>
+      <div class="full-film-container">
+        <div class="film-container">
+          <div class="film-container-txt">
+            <div class="film-txt">{{ film.title }}</div>
+            <div class="film-genre">{{film.year}},  {{film.genre}}</div>
+            <div class="film-producer">Режиссер: {{ film.director}}</div>
+            <div class="film-description">
+              <div class="film-description-txt">{{ film.overview }}
               </div>
             </div>
           </div>
-          <div class="film-buyed-container">
-            <div class="film-buyed-txt">Начать просмотр:</div>
-            <div class="film-buyed-services">
-              <img src="/static/main_app/resources/okko.svg">
-              <img src="/static/main_app/resources/netflix.svg">
-              <img src="/static/main_app/resources/more_tv.svg">
-              <img src="/static/main_app/resources/kinopoisk.svg">
-              <img src="/static/main_app/resources/ivi.svg">
-            </div>
+        </div>
+        <div class="film-buyed-container">
+          <div class="film-buyed-txt">Начать просмотр:</div>
+          <div class="film-buyed-services">
+            <img src="/static/main_app/resources/okko.svg">
+            <img src="/static/main_app/resources/netflix.svg">
+            <img src="/static/main_app/resources/more_tv.svg">
+            <img src="/static/main_app/resources/kinopoisk.svg">
+            <img src="/static/main_app/resources/ivi.svg">
           </div>
         </div>
       </div>
-{% endfor %}
-{% endif %}
+    </div>
+  {% endfor %}
+</div>
+</div>
+{% else %}
+<div class="grid-2">
+  <div class="container-headline">
+    <div class="txt-headline">В Вашей библиотеке пока нет фильмов</div>
+  </div>
+</div>
 
+{% endif %}
 {% endblock %}

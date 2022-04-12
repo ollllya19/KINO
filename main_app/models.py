@@ -52,3 +52,17 @@ class FilmPurchase(models.Model):
             verbose_name = "Покупка"
             verbose_name_plural = "Покупки"
             ordering = ['date']
+
+
+class FilmLookUp(models.Model):
+    userID = models.ForeignKey(User, on_delete=models.CASCADE)
+    filmID = models.ForeignKey(Film, on_delete=models.CASCADE)
+    datetime = models.DateTimeField(null=True, blank=True, auto_now=True)   
+
+    def __str__(self):
+        return f"{self.userID}: {self.filmID}"
+
+    class Meta:
+            verbose_name = "Просмотр фильма"
+            verbose_name_plural = "Просмотры фильмов"
+            ordering = ['datetime']

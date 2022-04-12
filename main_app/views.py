@@ -1,16 +1,11 @@
 import re
 from warnings import catch_warnings
-from django.shortcuts import redirect, render
-from django.http import HttpResponse
-from .models import User, Film, FilmPurchase
+from django.shortcuts import render
+from .models import FilmLookUp, User, Film, FilmPurchase
 
 genres = ['Drama', 'Action', 'Crime', 'Western','Adventure','Animation',
         'Biography', 'History', 'Romance', 'Fantasy', 'Comedy', 'Thriller', 'War', 'Mystery', 'Music']
 genres.sort()
-
-
-def main_page(request):
-    return render(request, "main_app/main_page.html")
 
 
 def signup(request):
@@ -28,34 +23,34 @@ def signin(request):
     if request.method == "POST":
         user = User.objects.get(phone=request.POST['login'], password=request.POST['password'])
         films = filter_purchase(user.id)
-        content = {'genres' : genres, 'films': films, 'user_id' : user.id}
+        content = {'genres' : genres, 'films': films, 'user_id' : user.id, 'genre': "Action"}
         return render(request, "main_app/lib.html", content)
     return render(request, "main_app/IKINOINPUT.html")
 
 
-
-def films(request, login_id):
-    films = filter_purchase(28)
-    content = {'genres' : genres, 'films': films}
+def show_genre(request, genre, user_id):
+    films = filter_genre(Film.objects.all()[:100], genre)
+    content = {'genres' : genres, 'films': films, 'genre':genre, "user_id": user_id}
     return render(request, "main_app/ind.html", content)
 
-def show_genre(request, genre):
-    films = filter_genre(Film.objects.all(), genre)
-    content = {'genres' : genres, 'films': films}
-
-    return render(request, "main_app/ind.html", content)
-
-def pers_library(request, user_id):
-    films = filter_purchase(user_id)
-    content = {'genres' : genres, 'films': films, 'user_id': user_id}
-
+def library(request, user_id):
+    looked_films = set(filter_looked_films(user_id))
+    paid_films = filter_purchase(user_id)
+    content = {'genres' : genres, 'paid_films': paid_films,'looked_films': looked_films, 'user_id': user_id, 'genre': 'Action'}
     return render(request, "main_app/lib.html", content)
 
 
-def buying(request, user_id, film_id):
-    new_buy = FilmPurchase.objects.create(userID=user_id, filmID = film_id)
-    content = {'films' : films, 'genres': genres, 'user_id': user_id}
+def buy(request, genre = "Action", user_id = 0, film_id = 1):
+    lookup = FilmLookUp.objects.create(userID=User.objects.get(id=user_id), filmID = Film.objects.get(id=film_id))
+    lookup.save()
+    content = {'genres': genres, 'user_id': user_id, 'film': Film.objects.get(id=film_id)}
     return render(request, "main_app/buy.html", content)
+
+def pay(request, user_id, film_id):
+    content = {'genres': genres, 'user_id': user_id, 'film': Film.objects.get(id=film_id)}
+    new_buy = FilmPurchase.objects.create(userID=User.objects.get(id=user_id), filmID = Film.objects.get(id=film_id))
+    new_buy.save()
+    return render(request, "main_app/paid.html", content)
 
 
 def user(request, login_id):
@@ -79,7 +74,8 @@ def user(request, login_id):
     content = {'films' : films, 'genres': genres, 'years': years, 'user_id': login_id}
     return render(request, "main_app/films.html", content)
 
-# filter films on genre
+
+
 def filter_genre(films, req):
     rez = []
     for obj in films:
@@ -100,6 +96,13 @@ def filter_year(films, req):
 
 def filter_purchase(user):
     p = FilmPurchase.objects.filter(userID=user)
+    rez = []
+    for obj in p:
+        rez.append(Film.objects.get(id=obj.filmID.id))
+    return rez
+
+def filter_looked_films(user):
+    p = FilmLookUp.objects.filter(userID=user).order_by('datetime')
     rez = []
     for obj in p:
         rez.append(Film.objects.get(id=obj.filmID.id))

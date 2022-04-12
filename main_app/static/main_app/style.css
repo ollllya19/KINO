@@ -153,6 +153,12 @@ flex-grow: 0;
 margin-right: 16px;
 }
 
+.poster {
+    width: 140px;
+height: 210px;
+background-size: 100%;
+}
+
 .full-film-container {
 /* Auto layout */
 
@@ -165,6 +171,7 @@ width: 442px;
 min-height: 206px;
 left: 180px;
 top: 24px;
+
 
 
 /* Inside auto layout */
@@ -375,23 +382,13 @@ flex: none;
 order: 2;
 flex-grow: 0;
 margin-top: 8px;
-
-font-family: 'SF-Pro-Text-Medium';
-font-style: normal;
-font-weight: 500;
-font-size: 12px;
-line-height: 20px;
-text-align: right;
-/* identical to box height, or 167% */
-
-letter-spacing: -0.408px;
-
-color: #FFFFFF;
 }
 
 .buy {
     /* Auto layout */
-
+    position: static;
+width: 20px;
+height: 20px;
 flex-direction: row;
 justify-content: center;
 align-items: center;
@@ -400,7 +397,7 @@ padding: 0px;
 position: relative;
 height: 20px;
 left: 5px;
-top: -30px;
+top: -40px;
 
 /* Inside auto layout */
 
@@ -965,7 +962,7 @@ padding: 0px;
 flex: none;
 order: 0;
 flex-grow: 0;
-margin: 70px 0px;
+margin: 70px 0px 0px 0px;
 }
 
 .ilya {
@@ -1104,4 +1101,37 @@ opacity: 0.6;
     font-weight: 700;
     font-style: normal;
     font-display: swap;
+}
+
+
+.name_link {
+    font-family: 'SF-Pro-Text-Medium';
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 20px;
+text-align: right;
+/* identical to box height, or 167% */
+
+letter-spacing: -0.408px;
+
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.name_link2 {
+    color: #000000;
+}
+
+.link_style {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    padding: 14px 121px;
+
+}
+
+.link_new:hover{
+    font-size: 20px;
 }
