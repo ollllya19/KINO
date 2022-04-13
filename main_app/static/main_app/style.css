@@ -1058,7 +1058,7 @@ height: 479px;
 flex: none;
 flex-grow: 0;
 
-font-family: 'SF Pro Display';
+font-family: 'SF-Pro-Text-Medium';
 font-style: normal;
 font-weight: 400;
 font-size: 14px;
@@ -1071,6 +1071,17 @@ color: #000000;
 opacity: 0.6;
 }
 
+
+.p {
+    font-family: 'SF-Pro-Text-Medium';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+    opacity: 0.6;
+
+}
 @font-face {
 	font-family: "SF-Pro-Text-Regular";
     src: url("Fonts/SF-Pro-Text-Regular.otf") format("opentype");
