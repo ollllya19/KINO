@@ -180,49 +180,40 @@ flex: none;
 order: 1;
 flex-grow: 0;
 }
+
 .film-container {
-    /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
 
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 0px;
+    position: static;
+    width: 442px;
+    min-height: 158px;
+    left: 180px;
+    top: 24px;
 
-position: static;
-width: 442px;
-min-height: 158px;
-left: 0px;
-top: 0px;
-
-
-/* Inside auto layout */
-
-flex: none;
-order: 0;
-flex-grow: 0;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
 }
 
 .film-container-txt {
-/* Auto layout */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
 
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 0px;
+    position: static;
+    width: 442px;
+    left: 0px;
+    top: 0px;
 
-position: static;
-width: 442px;
-height: 70px;
-left: 0px;
-top: 0px;
-
-
-/* Inside auto layout */
-
-flex: none;
-order: 0;
-flex-grow: 0;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
 }
+
 .film-txt {
     position: static;
     width: 442px;
@@ -303,85 +294,93 @@ order: 1;
 flex-grow: 0;
 margin: 0px 0px;
 }
+
 .film-description {
     display: flex;
-flex-direction: row;
-align-items: flex-start;
-padding: 0px;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    width: 442px;
+    left: 0px;
+    top: 78px;
 
-position: static;
-width: 442px;
-height: 80px;
-left: 0px;
-top: 78px;
+    /* Inside auto layout */
 
-
-/* Inside auto layout */
-
-flex: none;
-order: 1;
-flex-grow: 0;
-margin: 8px 0px;
-
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    margin: 8px 0px;
 }
 
 .film-description-txt {
-    position: static;
-width: 442px;
-min-height: 80px;
-left: 0px;
-top: 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 442px;
+    min-height: 80px;
+    left: 0px;
+    top: 0px;
 
-font-family: 'SF-Pro-Text-Medium';
-font-style: normal;
-font-weight: 500;
-font-size: 13px;
-line-height: 20px;
-/* or 154% */
+    font-family: 'SF-Pro-Text-Medium';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 20px;
+    /* or 154% */
 
-letter-spacing: -0.408px;
+    letter-spacing: -0.408px;
 
-color: #FFFFFF;
+    color: #FFFFFF;
 
 
-/* Inside auto layout */
+    /* Inside auto layout */
 
-flex: none;
-order: 1;
-flex-grow: 0;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
 }
 
 .film-buy-ticket {
-/* Auto layout */
-
-position: static;
-left: 0px;
-top: 166px;
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 151px;
+    order: 1;
 }
 
 .buy-button {
 
-align-items: flex-start;
-padding: 10px;
+    align-items: flex-start;
+    padding: 10px;
 
-position: static;
-width: 151px;
-left: 0px;
-top: 166px;
+    position: static;
+    width: 171px;
 
 
-/* Оранжевый цвет */
+    /* Оранжевый цвет */
 
-border: none;
-background: #FF6600;
-border-radius: 4px;
+    border: none;
+    background: #FF6600;
+    border-radius: 4px;
 
-/* Inside auto layout */
+    /* Inside auto layout */
 
-flex: none;
-order: 2;
-flex-grow: 0;
-margin-top: 8px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+
+    font-family: 'SF-Pro-Text-Medium';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 20px;
+    text-align: right;
+    /* identical to box height, or 167% */
+
+    letter-spacing: -0.408px;
+
+    color: #FFFFFF;
 }
 
 .buy {
@@ -408,18 +407,16 @@ margin: 0px 0px;
 }
 
 .film-icon-buy-ticket {
-    position: static;
-width: 20px;
-height: 20px;
-left: 0px;
-top: 0px;
+    position: relative;
+    height: 20px;
+    left: -140px;
+    top: 5px;
 
+    /* Inside auto layout */
 
-/* Inside auto layout */
-
-flex: none;
-order: 0;
-flex-grow: 0;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
 }
 
 .film-buy-ticket-txt {
@@ -852,7 +849,7 @@ flex-grow: 0;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-padding: 14px 121px;
+padding: 14px 0px;
 
 position: static;
 width: 295px;

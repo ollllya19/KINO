@@ -15,15 +15,15 @@ def signup(request):
         else:
             new_user = User.objects.create(phone=request.POST['login'], password=request.POST['password'])
             new_user.save()
-            return render(request, "main_app/IKINOINPUT.html")  
+            return render(request, "main_app/IKINOREG.html")  
     return render(request, "main_app/IKINOREG.html")
 
 
 def signin(request):
     if request.method == "POST":
-        user = User.objects.get(phone=request.POST['login'], password=request.POST['password'])
-        films = filter_purchase(user.id)
-        content = {'genres' : genres, 'films': films, 'user_id' : user.id, 'genre': "Action"}
+        userId  = User.objects.get(phone=request.POST['login'], password=request.POST['password']).id
+        looked_films, paid_films = get_library(userId)
+        content = {'genres' : genres, 'user_id' : userId, 'genre': "Action", 'paid_films': paid_films,'looked_films': looked_films }
         return render(request, "main_app/lib.html", content)
     return render(request, "main_app/IKINOINPUT.html")
 
@@ -34,8 +34,7 @@ def show_genre(request, genre, user_id):
     return render(request, "main_app/ind.html", content)
 
 def library(request, user_id):
-    looked_films = set(filter_looked_films(user_id))
-    paid_films = filter_purchase(user_id)
+    looked_films, paid_films = get_library(userId=user_id)
     content = {'genres' : genres, 'paid_films': paid_films,'looked_films': looked_films, 'user_id': user_id, 'genre': 'Action'}
     return render(request, "main_app/lib.html", content)
 
@@ -107,3 +106,8 @@ def filter_looked_films(user):
     for obj in p:
         rez.append(Film.objects.get(id=obj.filmID.id))
     return rez
+
+def get_library(userId):
+    paid_films = filter_purchase(userId)
+    looked_films = set(filter_looked_films(userId)) - set(paid_films)
+    return looked_films, paid_films
