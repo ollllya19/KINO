@@ -34,6 +34,19 @@ border: none;
 box-sizing: border-box;
 border-radius: 4px;
 padding: 12px 16px;
+color: #FFFFFF;
+}
+
+.filter-button {
+    position: absolute;
+    left: 332px;
+    right: 42px;
+    top: 8px;
+    height: 16px;
+    width: 16px;
+
+    background-image: url(/static/main_app/resources/filter-16x16.svg);
+    background-repeat: no-repeat;
 }
 
 .icon-filter {
@@ -726,7 +739,6 @@ padding: 0px;
 
 position: static;
 width: 600px;
-min-height: 108px;
 left: 0px;
 top: 60px;
 
@@ -771,7 +783,7 @@ border-radius: 2px;
 width: 429px;
 height: 16px;
 left: 24px;
-top: 0px;
+top: -19px;
 
 font-family: 'SF-Pro-Text-Medium';
 font-style: normal;
@@ -1143,3 +1155,239 @@ letter-spacing: -0.408px;
 .link_new:hover{
     font-size: 20px;
 }
+
+/* Style The Dropdown Button */
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    opacity: 0;
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #f1f1f1}
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn {
+    opacity: 0;
+  }
+  
+  .search-content {
+      /* Поиск: Настройки */
+  
+  
+  position: relative;
+  width: 392px;
+  height: 119px;
+  
+  background: #FFFFFF;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
+  }
+  
+  .search-content-text {
+      position: absolute;
+  width: 137px;
+  height: 19px;
+  left: 16px;
+  top: 8px;
+  
+  font-family: 'SF Pro Display';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  /* identical to box height */
+  
+  letter-spacing: 0.0074em;
+  
+  color: #000000;
+  
+  }
+  
+  
+  .search-genres {
+      /* Жанр */
+  
+  position: absolute;
+  width: 280px;
+  height: 32px;
+  left: 16px;
+  top: 39px;
+  }
+  
+  .search-genres-text {
+      position: absolute;
+  width: 110px;
+  height: 14px;
+  left: 0px;
+  top: 9px;
+  
+  font-family: 'SF-Pro-Text-Regular';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.0036em;
+  
+  color: #000000;
+  
+  }
+  .search-year {
+      /* Год выпуска */
+  
+  position: absolute;
+  width: 280px;
+  height: 32px;
+  left: 16px;
+  top: 79px;
+  }
+  
+  .search-year-text {
+      position: absolute;
+  width: 110px;
+  height: 14px;
+  left: 0px;
+  top: 9px;
+  
+  font-family: 'SF-Pro-Text-Regular';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.0036em;
+  
+  color: #000000;
+  
+  }
+  
+  .search-genres-dropdown {
+      /* Component 3 */
+  
+  
+  /* Auto layout */
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 8px 8px 12px;
+  
+  position: absolute;
+  width: 168px;
+  height: 32px;
+  left: 61px;
+  top: 0px;
+  
+  background: #FFFFFF;
+  border: 0.5px solid #787878;
+  box-sizing: border-box;
+  border-radius: 4px;
+  }
+  
+  
+  .search-year-input {
+      /* Component 28 */
+  
+  
+  /* Auto layout */
+  
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 8px 8px 8px 12px;
+  
+  position: absolute;
+  width: 168px;
+  height: 32px;
+  left: 165px;
+  top: 0px;
+  
+  background: #FFFFFF;
+  border: 0.5px solid #787878;
+  box-sizing: border-box;
+  border-radius: 4px;
+  }
+  
+  .overlay-genres {
+      /* Поиск: Overlay жанры */
+  
+  
+  /* Auto layout */
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 8px 8px 8px 12px;
+  
+  position: relative;
+  width: 168px;
+  min-height: 422px;
+  
+  background: #FFFFFF;
+  border: 0.5px solid #787878;
+  box-sizing: border-box;
+  border-radius: 4px;
+  }
+  
+  .overlay-genres-text {
+      /* Выбор жанров */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 12px;
+  
+  position: absolute;
+  width: 168px;
+  height: 32px;
+  left: 165px;
+  top: 0px;
+  
+  
+  /* Inside auto layout */
+  
+  flex: none;
+  flex-grow: 0;
+  margin: 0px 0px;
+
+  background: #FFFFFF;
+  border: 0.5px solid #787878;
+  box-sizing: border-box;
+  border-radius: 4px;
+  }
+
+  .show {display: block;}

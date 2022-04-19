@@ -8,7 +8,7 @@ class ExelProcessor:
         book = openpyxl.load_workbook(file)
         sheet = book.active
 
-        k = 1000000000
+        k = 1
         for i in range(2, sheet.max_row):
             film = Film.objects.create(id = k, photo=sheet[i][1].value, title = sheet[i][2].value,
                                       year = sheet[i][3].value, certificate = sheet[i][4].value, 

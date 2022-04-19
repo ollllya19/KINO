@@ -60,6 +60,23 @@ left: 32px;
 top: 135px;
 }
 
+.errorMessage {
+    position: absolute;
+    width: 360px;
+    top: 270px;
+
+    text-align: center;
+    font-family: 'SF-Pro-Text-Semibold';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 16px;
+
+    letter-spacing: -0.36px;
+
+    color: #000000;
+}
+
 .input-number {
     position: absolute;
 width: 296px;

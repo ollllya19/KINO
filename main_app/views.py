@@ -1,3 +1,4 @@
+from email import message
 import re
 from warnings import catch_warnings
 from django.shortcuts import render
@@ -13,24 +14,43 @@ def signup(request):
         if request.POST['login']=="" or request.POST['password']=="":
             return render(request, "main_app/IKINOREG.html")
         else:
-            new_user = User.objects.create(phone=request.POST['login'], password=request.POST['password'])
-            new_user.save()
-            return render(request, "main_app/IKINOREG.html")  
+            try:
+                new_user = User.objects.create(phone=request.POST['login'], password=request.POST['password'])
+                new_user.save()
+                message = ""
+            except:
+                message = "Пользователь уже существует"
+            return render(request, "main_app/IKINOREG.html", {'message' : message})  
     return render(request, "main_app/IKINOREG.html")
 
 
 def signin(request):
     if request.method == "POST":
-        userId  = User.objects.get(phone=request.POST['login'], password=request.POST['password']).id
-        looked_films, paid_films = get_library(userId)
-        content = {'genres' : genres, 'user_id' : userId, 'genre': "Action", 'paid_films': paid_films,'looked_films': looked_films }
+        try:
+            userId  = User.objects.get(phone=request.POST['login'], password=request.POST['password']).id
+            looked_films, paid_films = get_library(userId)
+        except:
+            message="Неправильный логин или пароль"
+            return render(request, "main_app/IKINOINPUT.html", {'message': message})
+        content = {'genres' : genres, 'user_id' : userId, 'genre': "Action", 'paid_films': paid_films,'looked_films': looked_films}
         return render(request, "main_app/lib.html", content)
     return render(request, "main_app/IKINOINPUT.html")
 
 
+def search(request, user_id):
+    title = request.GET['title']
+    if title != '':
+        found_films = filter_title(Film.objects.all(), title)
+    else:
+        found_films = Film.objects.all()
+    looked_films, paidList = get_library(userId=user_id)
+    content = {'genres' : genres, 'films': found_films, 'genre':"Action", "user_id": user_id, 'paid_list': paidList}
+    return render(request, "main_app/ind.html", content)
+
 def show_genre(request, genre, user_id):
-    films = filter_genre(Film.objects.all()[:100], genre)
-    content = {'genres' : genres, 'films': films, 'genre':genre, "user_id": user_id}
+    films, paidList = filter_genre(Film.objects.all()[:100], genre, user_id)
+    looked_films, paidList = get_library(userId=user_id)
+    content = {'genres' : genres, 'films': films, 'genre':genre, "user_id": user_id, 'paid_list': paidList}
     return render(request, "main_app/ind.html", content)
 
 def library(request, user_id):
@@ -75,11 +95,19 @@ def user(request, login_id):
 
 
 
-def filter_genre(films, req):
+def filter_genre(films, req, user_id):
     rez = []
+    boughtList = {}
     for obj in films:
-        if req in obj.genre: rez.append(obj)
-    return rez
+        if req in obj.genre: 
+            rez.append(obj)
+            try:
+                user = FilmPurchase(userID=user_id, filmID = obj.id)
+                boughtList[obj.id] = True
+            except:
+                boughtList[obj.id] = False
+    return rez, boughtList
+
 
 def filter_title(films, req):
     rez = []

@@ -38,15 +38,13 @@
       </div>
       <div class="procedure-paying">
         <div class="procedure-paying-checkbox">
-          <div class="procedure-paying-checkbox-status">
+          <input type="checkbox" class="procedure-paying-checkbox-status">
             <div class="procedure-paying-txt">Выслать ли вам чек об покупке фильма на электронную почту?</div>
-          </div>
         </div>
         <div class="procedure-paying-checkbox">
-          <div class="procedure-paying-checkbox-status">
+          <input type="checkbox" class="procedure-paying-checkbox-status">
             <div class="procedure-paying-txt">Я согласен с вашими Условиями и Положениями сервиса</div>
           </div>
-        </div>
         <div class="cta-buttons-container">
           <div class="cta-buttons-buy"><a class="name_link" href="{% url 'pay' user_id film.id %}">Оплатить фильм</a></div>
           <div class="cta-buttons-buy2"><a class="name_link" href="/IKINO/films/library/{{user_id}}">Отмена</a></div>

@@ -28,6 +28,7 @@
             <div class = "password-txt">Введите пароль</div>  
           </div>
       </div>
+      <div class="errorMessage">{{message}}</div>
       <button class = "authorization" type="submit" value="Создать аккаунт">Создать аккаунт</button>
       <button class = "registration" type="submit" value="Войти в аккаунт"><a class = "name_link2" href="{% url 'signin' %}">Войти в аккаунт</a></button>
     </form>

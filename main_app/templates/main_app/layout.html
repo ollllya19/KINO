@@ -9,6 +9,22 @@
     }
    </style>
   <link rel="stylesheet" href="/static/main_app/style.css">
+
+  <script>
+    function dropdownFunc() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+    
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(e) {
+      if (!e.target.matches('.filter-button')) {
+        var myDropdown = document.getElementById("myDropdown");
+          if (myDropdown.classList.contains('show')) {
+            myDropdown.classList.remove('show');
+          }
+      }
+    }
+  </script>
 </head>
 
 <body style="background: #F4F4F4">
@@ -17,13 +33,37 @@
       <img src="/static/main_app/resources/logotype.svg">
     </div>
 
-    <form  class="search">
-      <input class="search-input">
-      <div class="icon-filter">
-        <img src="/static/main_app/resources/filter-16x16.svg">
-      </div>
+    <form class="search" action="/IKINO/films/search/{{user_id}}/">
+      <input class="search-input" name="title" value = "">
+
+      <button class="filter-button" onclick="dropdownFunc()">
+        <div class="icon-filter">
+          <img src="/static/main_app/resources/filter-16x16.svg">
+        </div>
+      </button>
+
       <div class="icon-search">
-        <img src="/static/main_app/resources/search-18x18.svg">
+        <button type="submit"><a class="name_link" href="/IKINO/films/search/{{user_id}}/{{title}}"><img src="/static/main_app/resources/search-18x18.svg"></a>
+        </button>
+      </div>
+
+      <div class="dropdown-content" id="myDropdown">
+        <div class="search-content">
+          <div class="search-content-text">Настройки поиска</div>
+          <div class="search-genres">
+            <div class="search-genres-text">По жанру:</div>
+            <select class="overlay-genres-text" name="chosen_genre">
+              <option selected disabled hidden>Выберите жанр</option>
+                {% for genre in genres %}
+                    <option value="{{ genre }}">{{ genre }}</option>
+                {% endfor %}
+            </select>
+          </div>
+          <div class="search-year">
+            <div class="search-year-text">по году выпуска:</div>
+          <input class="search-year-input" value="Введите год выпуска">
+          </div>
+        </div>
       </div>
     </form>
 
