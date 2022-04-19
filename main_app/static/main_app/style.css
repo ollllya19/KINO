@@ -45,7 +45,7 @@ color: #FFFFFF;
     height: 16px;
     width: 16px;
 
-    background-image: url(/static/main_app/resources/filter-16x16.svg);
+    background-image: url(/static/main_app/resources/icon-filter.svg);
     background-repeat: no-repeat;
 }
 
@@ -63,6 +63,7 @@ color: #FFFFFF;
     top: 8px;
     background: #3E3E3E;
     transform: rotate(90deg);
+    background-image: url(/static/main_app/resources/icon-search.svg);
 }
 
 .account {
