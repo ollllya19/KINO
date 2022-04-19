@@ -1124,6 +1124,9 @@ opacity: 0.6;
     font-display: swap;
 }
 
+.button_class{
+    background: #3E3E3E;
+}
 
 .name_link {
     font-family: 'SF-Pro-Text-Medium';
