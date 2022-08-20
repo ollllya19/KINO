@@ -44,6 +44,8 @@ class FilmPurchase(models.Model):
     filmID = models.ForeignKey(Film, on_delete=models.CASCADE)
     date = models.DateField(null=True, blank=True, auto_now=True)   
     cheque = models.FileField(null=True, blank=True)
+    email = models.EmailField(null=True, blank=True)
+    card = models.CharField(null=True, blank=True, max_length=64)
 
     def __str__(self):
         return f"{self.userID}: {self.filmID}"
